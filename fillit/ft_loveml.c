@@ -6,7 +6,7 @@
 /*   By: vpopovyc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 15:55:04 by vpopovyc          #+#    #+#             */
-/*   Updated: 2016/12/13 15:55:18 by vpopovyc         ###   ########.fr       */
+/*   Updated: 2016/12/19 21:23:08 by hshakula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static void		ft_map(int n, int i, char *map)
 {
 	int		c;
-	int 	j;
-	
+	int		j;
+
 	c = 0;
 	j = 0;
 	while (i--)
@@ -24,7 +24,6 @@ static void		ft_map(int n, int i, char *map)
 		map[j] = '.';
 		if (c == n)
 		{
-
 			map[j] = '\n';
 			c = -1;
 		}
@@ -33,7 +32,7 @@ static void		ft_map(int n, int i, char *map)
 	}
 }
 
-void	ft_loveml(char **base, int n)
+void			ft_loveml(char **base, int n)
 {
 	char	*map;
 	int		x[6];
@@ -45,16 +44,16 @@ void	ft_loveml(char **base, int n)
 	map = (char*)malloc(sizeof(char) * (x[0] + 1));
 	map[x[0]] = '\0';
 	ft_map(n, x[0], map);
-	while(!x[5])
+	while (!x[5])
 	{
-		free(map);		
+		free(map);
 		n++;
 		ft_intzero(y, 0, 26);
 		ft_intzero(x, (n * n) + n, 6);
 		x[1] = n;
 		map = (char*)malloc(sizeof(char) * (x[0] + 1));
 		map[x[0]] = '\0';
-		ft_map(n, x[0], map);	
+		ft_map(n, x[0], map);
 		ft_tsort(map, base, x, y);
 	}
 	ft_putstr(map);

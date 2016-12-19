@@ -15,7 +15,7 @@
 int		main(int ac, char **av)
 {
 	char	*dbase;
-	char 	**base;
+	char	**base;
 
 	if (ac != 2)
 		ft_putstr("usage: ./fillit sample.fillit\n");

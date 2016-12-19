@@ -6,7 +6,7 @@
 /*   By: vpopovyc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 18:11:23 by vpopovyc          #+#    #+#             */
-/*   Updated: 2016/12/05 21:54:37 by vpopovyc         ###   ########.fr       */
+/*   Updated: 2016/12/19 21:26:01 by hshakula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 static void		ft_data_base(char *src, char *add, int n)
 {
-	int 	i;
-	char	pattern[27] = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	int		i;
+	char	pattern[27];
 
+	pattern = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	i = -1;
 	add[20] = '*';
 	while (add[++i] != '\0')
@@ -52,10 +53,10 @@ static int		ft_check_chain(char *buf)
 static int		ft_parse_validate(char *buf)
 {
 	int		av[4];
-	
+
 	ft_intzero(av, -1, 4);
 	while (buf[++av[0]])
-	{	
+	{
 		if (buf[av[0]] == '.')
 			av[1]++;
 		if (buf[av[0]] == '#')
