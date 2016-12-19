@@ -12,9 +12,9 @@
 
 NAME = fillit
 
-SRC = main.c ft_parse_sample.c ft_parse_validate.c ft_check_chain.c ft_data_base.c 
+SRC = main.c ft_parse_sample.c ft_tsort.c ft_ccw.c ft_loveml.c
 
-OBJ = main.o ft_parse_sample.o ft_parse_validate.o ft_check_chain.o ft_data_base.o 
+OBJ = $(SRC:.c=.o)
 
 INC = ft_header.h libft.h
 
@@ -24,9 +24,9 @@ CFLAGS = -c -Wall -Wextra -Werror
 
 all : $(NAME)
 
-$(NAME):
-	gcc $(CFLAGS) $(SRC) -I $(INC)
-	gcc $(OBJ) $(LIB) -o $(NAME)
+$(NAME): 
+	 gcc $(CFLAGS) $(SRC) -I $(INC)
+	 gcc $(OBJ) $(LIB) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)

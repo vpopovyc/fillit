@@ -12,32 +12,50 @@
 
 #include "ft_header.h"
 
-void	ft_loveml(int n)
+static void		ft_map(int n, int i, char *map)
+{
+	int		c;
+	int 	j;
+	
+	c = 0;
+	j = 0;
+	while (i--)
+	{
+		map[j] = '.';
+		if (c == n)
+		{
+
+			map[j] = '\n';
+			c = -1;
+		}
+		c++;
+		j++;
+	}
+}
+
+void	ft_loveml(char **base, int n)
 {
 	char	*map;
-	int 	i;
-	int		tab[5];
+	int		x[6];
+	int		y[26];
 
-	i = (n * n) + n;
-	map = (char*)malloc(sizeof(char) * (i + 1));
-	map[i] = '\0';
-	tab[0] = i; // i_max
-	tab[1] = n; // size square
-	tab[2] = -1; // start point
-	tab[3] = 0; // number of tetriminus
-	tab[4] = 0; // prev number of tetrim
-	ft_map(n, i, map);
-	//printf("%s\n", map);
-	if (!ft_tsort(map, base, tab))
-		ft_loveml(n + 1); // to do
-	while(n < 10)
-	{	
+	ft_intzero(y, 0, 26);
+	ft_intzero(x, (n * n) + n, 6);
+	x[1] = n;
+	map = (char*)malloc(sizeof(char) * (x[0] + 1));
+	map[x[0]] = '\0';
+	ft_map(n, x[0], map);
+	while(!x[5])
+	{
 		free(map);		
 		n++;
-		i = (n * n) + n;
-		map = (char*)malloc(sizeof(char) * (i + 1));
-		map[i] = '\0';
-		ft_map(n, i, map);
-	//	printf("%s\n", map);
+		ft_intzero(y, 0, 26);
+		ft_intzero(x, (n * n) + n, 6);
+		x[1] = n;
+		map = (char*)malloc(sizeof(char) * (x[0] + 1));
+		map[x[0]] = '\0';
+		ft_map(n, x[0], map);	
+		ft_tsort(map, base, x, y);
 	}
+	ft_putstr(map);
 }

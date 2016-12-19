@@ -15,14 +15,11 @@
 
 # include "libft.h"
 # include <fcntl.h>
-# include <stdio.h>
 # include <string.h>
-void	ft_parse_sample(char *av, char *strg);
-int		ft_parse_validate(char *buf);
-int		ft_check_chain(char *buf);
-void	ft_data_base(char *src, char *add, int n);
-void	ft_map(int n, int i, char *map);
-void	ft_loveml(int n, char *dbase);
-void	ft_write(char *map, char *base, int n, int i);
-int		ft_check_place(char *map, char *base, int n, int i);
+int			ft_parse_sample(char *av, char *strg);
+void		ft_loveml(char **base, int n);
+void		ft_clear(char *map, char *base);
+void		ft_write(char *map, char *base, int n, int i);
+int			ft_check_place(char *map, char *base, int n, int i);
+int			ft_tsort(char *map, char **base, int *x, int *y);
 #endif
