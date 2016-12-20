@@ -15,9 +15,9 @@
 static void		ft_data_base(char *src, char *add, int n)
 {
 	int		i;
-	char	pattern[27];
+	char	*pattern;
 
-	pattern = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	pattern = ft_strdup(" ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 	i = -1;
 	add[20] = '*';
 	while (add[++i] != '\0')

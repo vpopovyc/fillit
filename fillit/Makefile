@@ -12,21 +12,24 @@
 
 NAME = fillit
 
-SRC = main.c ft_parse_sample.c ft_tsort.c ft_ccw.c ft_loveml.c
+SRC = main.c ft_parse_sample.c ft_tsort.c ft_ccw.c ft_loveml.c \
+		ft_bzero.c ft_putchar.c ft_putendl.c ft_putstr.c ft_strcpy.c \
+		ft_strdup.c ft_strlcat.c ft_strncat.c ft_strncpy.c ft_strnew.c \
+		ft_strsplit.c ft_strlen.c ft_intzero.c
 
 OBJ = $(SRC:.c=.o)
 
-INC = ft_header.h libft.h
-
-LIB = libft.a
+INC = ft_header.h
 
 CFLAGS = -c -Wall -Wextra -Werror
 
 all : $(NAME)
 
-$(NAME): 
-	 gcc $(CFLAGS) $(SRC) -I $(INC)
-	 gcc $(OBJ) $(LIB) -o $(NAME)
+$(NAME): $(OBJ)
+	 gcc $(OBJ) -o $(NAME)
+
+%.o: %.c
+	gcc -I $(INC) $(CFLAGS) -o $@ $<
 
 clean:
 	rm -f $(OBJ)
