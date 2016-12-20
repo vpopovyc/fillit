@@ -6,7 +6,7 @@
 /*   By: hshakula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 21:29:14 by hshakula          #+#    #+#             */
-/*   Updated: 2016/12/19 21:29:36 by hshakula         ###   ########.fr       */
+/*   Updated: 2016/12/20 19:21:48 by vpopovyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# include <stdio.h>
 
 int			ft_parse_sample(char *av, char *strg);
 void		ft_loveml(char **base, int n);
@@ -37,4 +36,5 @@ char		*ft_strnew(size_t size);
 char		**ft_strsplit(char const *s, char c);
 size_t		ft_strlen(const char *s);
 void		ft_intzero(int ar[], int f, size_t n);
+
 #endif
