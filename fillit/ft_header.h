@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdio.h>
+
 int			ft_parse_sample(char *av, char *strg);
 void		ft_loveml(char **base, int n);
 void		ft_clear(char *map, char *base);
