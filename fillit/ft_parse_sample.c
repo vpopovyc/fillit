@@ -55,15 +55,13 @@ static int		ft_parse_validate(char *buf, int ccki)
 	int		av[4];
 
 	ft_intzero(av, -1, 4);
-	if (buf[0] == '\n')
-		return (0);
 	while (buf[++av[0]])
 	{
 		if (buf[av[0]] == '.')
 			av[1]++;
 		if (buf[av[0]] == '#')
 			av[2]++;
-		if ((buf[av[0]] == '\n') && (av[1] + av[2] + av[3] == av[0]))
+		if ((buf[av[0]] == '\n') && (av[1] + av[2] + av[3] == av[0]) && av[0])
 			av[3]++;
 	}
 	if (av[1] == 12 && av[2] == 4 && av[3] == (ccki == 20 ? 4 : 5))
@@ -97,5 +95,5 @@ int				ft_parse_sample(char *av, char *strg)
 		if (close(fd) == -1 || j != 20)
 			return (0);
 	}
-	return (1);
+	return (n);
 }

@@ -12,14 +12,14 @@
 
 NAME = fillit
 
-SRC = main.c ft_parse_sample.c ft_tsort.c ft_ccw.c ft_loveml.c \
-		ft_bzero.c ft_putchar.c ft_putendl.c ft_putstr.c ft_strcpy.c \
-		ft_strdup.c ft_strlcat.c ft_strncat.c ft_strncpy.c ft_strnew.c \
-		ft_strsplit.c ft_strlen.c ft_intzero.c
+SRC = main.c ft_parse_sample.c ft_tsort.c ft_ccw.c ft_loveml.c lib/ft_bzero.c \
+		lib/ft_putchar.c lib/ft_putendl.c lib/ft_putstr.c lib/ft_strcpy.c \
+		lib/ft_strdup.c lib/ft_strlcat.c lib/ft_strncat.c lib/ft_strncpy.c \
+		lib/ft_strnew.c lib/ft_strsplit.c lib/ft_strlen.c lib/ft_intzero.c
 
 OBJ = $(SRC:.c=.o)
 
-INC = ft_header.h
+INC = lib/ft_header.h
 
 CFLAGS = -c -Wall -Wextra -Werror
 

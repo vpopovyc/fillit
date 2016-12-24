@@ -32,13 +32,13 @@ static void		ft_map(int n, int i, char *map)
 	}
 }
 
-void			ft_loveml(char **base, int n)
+void			ft_loveml(char **base, int n, int size)
 {
 	char	*map;
 	int		x[6];
-	int		y[26];
+	int		y[size];
 
-	ft_intzero(y, 0, 26);
+	ft_intzero(y, 0, size);
 	ft_intzero(x, (n * n) + n, 6);
 	x[1] = n;
 	map = (char*)malloc(sizeof(char) * (x[0] + 1));
@@ -48,9 +48,10 @@ void			ft_loveml(char **base, int n)
 	{
 		free(map);
 		n++;
-		ft_intzero(y, 0, 26);
+		ft_intzero(y, 0, size);
 		ft_intzero(x, (n * n) + n, 6);
 		x[1] = n;
+		x[4] = size;
 		map = (char*)malloc(sizeof(char) * (x[0] + 1));
 		map[x[0]] = '\0';
 		ft_map(n, x[0], map);

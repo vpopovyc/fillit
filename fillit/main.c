@@ -30,7 +30,7 @@ int		main(int ac, char **av)
 		}
 		base = ft_strsplit(dbase, 42);
 		free(dbase);
-		ft_loveml(base, 1);
+		ft_loveml(base, 1, n);
 	}
 	return (0);
 }
